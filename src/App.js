@@ -21,13 +21,13 @@ const MostraTempo = (props) => {
 }
 
 // componente para mostrar botão
-const Button = (props) => <button>props.text</button>
+const Button = (props) => <button>{props.text}</button>
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <MostraVoltas voltas='14' />
-      <Button text='+++'/>
+      <Button text='+'/>
       <Button text='-'/>
       <MostraTempo tempo='01:30'/>
       <Button text='Iniciar'/>
