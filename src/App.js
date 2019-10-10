@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+
+// componente para mostras voltas
+const MostraVoltas = (props) => {
+  return (
+    <p>
+      {props.voltas}<br />
+      Voltas
+    </p>
+  )
+}
+
+// componente para mostrar tempo
+const MostraTempo = (props) => {
+  return (
+    <p>
+      {props.tempo}<br />
+      Tempo médio por volta
+    </p>
+  )
+}
+
+// componente para mostrar botão
+const Button = (props) => <button>props.text</button>
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MostraVoltas voltas='14' />
+      <Button text='+++'/>
+      <Button text='-'/>
+      <MostraTempo tempo='01:30'/>
+      <Button text='Iniciar'/>
+      <Button text='Reiniciar'/>
     </div>
   );
 }
 
-export default App;
+export default App
