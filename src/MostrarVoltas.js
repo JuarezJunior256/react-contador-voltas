@@ -3,8 +3,8 @@ import React from 'react'
 // componente para mostras voltas
 const MostraVoltas = (props) => {
     return (
-      <p>
-        {props.voltas}<br />
+      <p className="voltas">
+        <span>{props.voltas}</span><br />
         Voltas
       </p>
     )

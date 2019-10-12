@@ -9,8 +9,8 @@ const MostraTempo = (props) => {
     const segundosStr = segundos < 10 ? '0' + segundos : segundos // formatação para mostrar dois algorismo
   
     return (
-      <p>
-        {`${minutosStr} : ${segundosStr}`}<br />
+      <p className='tempo'>
+        <span>{`${minutosStr} : ${segundosStr}`}</span><br />
         Tempo médio por volta
       </p>
     )

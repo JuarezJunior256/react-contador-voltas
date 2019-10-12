@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
+import './styles.css'
 import MostraVoltas from './MostrarVoltas'
 import MostraTempo from './MostrarTempo'
 import Button from './Button'
@@ -38,7 +39,9 @@ function App() {
   }
   // decrementando o numero de voltas
   const decrement = () => {
-    setNumVoltas(numVoltas - 1)
+    if (numVoltas > 0) {
+      setNumVoltas(numVoltas - 1)
+    }
   }
 
   // resetar o timer
@@ -50,13 +53,13 @@ function App() {
   return (
     <div>
       <MostraVoltas voltas={numVoltas} />
-      <Button text='+' onClick={increment}/>
-      <Button text='-' onClick={decrement}/>
+      <Button text='+' className='bigger' onClick={increment}/>
+      <Button text='-' className='bigger' onClick={decrement}/>
       {
         numVoltas > 0 &&
         <MostraTempo tempo={tempo/numVoltas}/>
       }
-      <Button onClick={toggleRunning} text='Iniciar'/>
+      <Button onClick={toggleRunning} text={running ? 'Pausar' : 'Iniciar'}/>
       <Button onClick={reset} text='Reiniciar'/>
     </div>
   );
