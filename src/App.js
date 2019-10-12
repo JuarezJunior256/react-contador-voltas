@@ -1,33 +1,9 @@
 import React, {useState, useEffect} from 'react'
 
-// componente para mostras voltas
-const MostraVoltas = (props) => {
-  return (
-    <p>
-      {props.voltas}<br />
-      Voltas
-    </p>
-  )
-}
+import MostraVoltas from './MostrarVoltas'
+import MostraTempo from './MostrarTempo'
+import Button from './Button'
 
-// componente para mostrar tempo
-const MostraTempo = (props) => {
-  const tempo = props.tempo
-  const minutos =  Math.round(tempo / 60) // obtendo os minutos
-  const segundos = tempo % 60 // obtendo os segundos
-  const minutosStr = minutos < 10 ? '0' + minutos : minutos // formatação para mostrar dois algorismo
-  const segundosStr = segundos < 10 ? '0' + segundos : segundos // formatação para mostrar dois algorismo
-
-  return (
-    <p>
-      {`${minutosStr} : ${segundosStr}`}<br />
-      Tempo médio por volta
-    </p>
-  )
-}
-
-// componente para mostrar botão
-const Button = (props) => <button onClick={props.onClick}>{props.text}</button>
 
 function App() {
   // definindo numero de voltas
@@ -39,7 +15,7 @@ function App() {
 
   // será atualizado apenas na primeira vez
   useEffect(() => {
-    let timer = null // variavel que irá receber uma instancia do setInterval
+    let timer = null // variavel que irá receber uma instancia do setIntervals
     if (running) { 
       timer = setInterval(() => {
         setTempo(old => old + 1)
